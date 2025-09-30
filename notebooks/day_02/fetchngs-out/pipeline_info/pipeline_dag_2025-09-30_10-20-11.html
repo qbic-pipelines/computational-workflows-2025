@@ -1,0 +1,130 @@
+<!--
+  ~ Copyright 2013-2024, Seqera Labs
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+<html>
+<head>
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
+</head>
+<body>
+<pre class="mermaid" style="text-align: center;">
+%%{
+  init: {
+    'theme': 'base',
+    'themeVariables': {
+      'primaryColor': '#B6ECE2',
+      'primaryTextColor': '#160F26',
+      'primaryBorderColor': '#065647',
+      'lineColor': '#545555',
+      'clusterBkg': '#BABCBD22',
+      'clusterBorder': '#DDDEDE',
+      'fontFamily': 'arial'
+    }
+  }
+}%%
+flowchart TB
+    subgraph " "
+    v0["Channel.from"]
+    v5["fields"]
+    v24["certificate"]
+    v28["certificate"]
+    v34["user"]
+    v42["pipeline"]
+    v43["strandedness"]
+    v44["mapping_fields"]
+    v63["Channel.of"]
+    end
+    subgraph "NFCORE_FETCHNGS [NFCORE_FETCHNGS]"
+    subgraph "NFCORE_FETCHNGS:SRA [SRA]"
+    v6(["SRA_IDS_TO_RUNINFO"])
+    v9(["SRA_RUNINFO_TO_FTP"])
+    v16(["SRA_FASTQ_FTP"])
+    subgraph "NFCORE_FETCHNGS:SRA:FASTQ_DOWNLOAD_PREFETCH_FASTERQDUMP_SRATOOLS [FASTQ_DOWNLOAD_PREFETCH_FASTERQDUMP_SRATOOLS]"
+    v22(["CUSTOM_SRATOOLSNCBISETTINGS"])
+    v25(["SRATOOLS_PREFETCH"])
+    v29(["SRATOOLS_FASTERQDUMP"])
+    v21(( ))
+    v23(( ))
+    end
+    v35(["ASPERA_CLI"])
+    v45(["SRA_TO_SAMPLESHEET"])
+    v57(["MULTIQC_MAPPINGS_CONFIG"])
+    v7(( ))
+    v12(( ))
+    v39(( ))
+    v46(( ))
+    v51(( ))
+    end
+    end
+    subgraph " "
+    v17[" "]
+    v36[" "]
+    v50["samplesheet"]
+    v58["sample_mappings"]
+    v66[" "]
+    v68["versions"]
+    end
+    subgraph "PIPELINE_INITIALISATION [PIPELINE_INITIALISATION]"
+    v1(( ))
+    end
+    v0 --> v1
+    v5 --> v6
+    v1 --> v6
+    v6 --> v9
+    v6 --> v7
+    v9 --> v7
+    v9 --> v12
+    v12 --> v16
+    v16 --> v17
+    v16 --> v7
+    v16 --> v39
+    v21 --> v22
+    v22 --> v25
+    v22 --> v29
+    v22 --> v23
+    v24 --> v25
+    v12 --> v25
+    v25 --> v29
+    v25 --> v23
+    v28 --> v29
+    v29 --> v23
+    v29 --> v39
+    v34 --> v35
+    v12 --> v35
+    v35 --> v36
+    v35 --> v7
+    v35 --> v39
+    v42 --> v45
+    v43 --> v45
+    v44 --> v45
+    v39 --> v45
+    v45 --> v46
+    v45 --> v51
+    v46 --> v50
+    v51 --> v57
+    v57 --> v58
+    v57 --> v7
+    v63 --> v7
+    v7 --> v66
+    v7 --> v68
+    v23 --> v7
+    v12 --> v21
+
+</pre>
+<script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+  mermaid.initialize({ startOnLoad: true, maxTextSize: Number.MAX_SAFE_INTEGER, maxEdges: Number.MAX_SAFE_INTEGER });
+</script>
+</body>
+</html>

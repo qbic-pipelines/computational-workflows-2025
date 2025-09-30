@@ -1,0 +1,14 @@
+sample_names_rename_buttons:
+  - sample
+  - experiment_accession
+  - run_accession
+  - sample_accession
+  - experiment_alias
+  - run_alias
+  - sample_alias
+  - experiment_title
+  - sample_title
+  - sample_description"
+sample_names_rename:
+  - ["SRX19144486", "SRX19144486", "SRR23195516", "SAMN32880530", "GSM6958543_r1", "GSM6958543_r1", "GSM6958543", "Illumina HiSeq 2000 sequencing: GSM6958543: H2 Mus musculus RNA-Seq", "H2", "H2"]
+  - ["SRX19144488", "SRX19144488", "SRR23195511", "SAMN32880528", "GSM6958545_r1", "GSM6958545_r1", "GSM6958545", "Illumina HiSeq 2000 sequencing: GSM6958545: C3 Mus musculus RNA-Seq", "C3", "C3"]
