@@ -1,12 +1,25 @@
 # this is the base image the container is built on. In this case, it is a slim version of the Debian operating system.
-FROM debian:bullseye-slim
+FROM ubuntu:22.04
 
-# these are the labels that are added to the image. They are metadata that can be used to identify the author of the image.
-LABEL image.author.name "yourname"
-LABEL image.author.email "yourmail"
+# these are the labels that are added to the image. 
+# They are metadata that can be used to identify the author of the image. 
 
-# !TODO: add the command that is run to install the dependencies for the image. In this case, it should be updating the package list and installing curl and cowsay.
+LABEL image.author.name "Christina Parpoulas"
+LABEL image.author.email "christina.parpoulas@student.uni-tuebingen.de"
 
+# !TODO: add the command that is run to install the dependencies for the image. 
+# In this case, it should be updating the package list and installing curl and cowsay. 
+# Install dependencies: update package list, install curl and cowsay
+RUN apt-get update && \
+    apt-get install -y curl cowsay && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
 
+# !TODO: add an ENV line to set environmental variables. 
+# In this case, it should set the PATH variable to /usr/games. 
+# Explain in the notebook why this is necessary.
+# Set environmental variables
+ENV PATH="/usr/games:${PATH}"
 
-# !TODO: add an ENV line to set environmental variables. In this case, it should set the PATH variable to /usr/games. Explain in the notebook why this is necessary.
+# Set default command
+CMD ["cowsay", "Hello from Docker!"]
