@@ -1,11 +1,17 @@
 FROM debian:bullseye-slim
 
-LABEL image.author.name="yourname"
-LABEL image.author.email="yourmail"
+LABEL image.author.name="Mykyta Borodin"
+LABEL image.author.email="mykyta.borodin@student.uni-tuebingen.de"
 
 # Install dependencies
+RUN apt-get update && apt-get install -y curl && rm -rf /var/lib/apt/lists/*
 
 # Download and install Salmon
+RUN curl -L https://github.com/COMBINE-lab/salmon/releases/download/v1.5.2/salmon-1.5.2_linux_x86_64.tar.gz -o salmon.tar.gz && \
+    tar -xzf salmon.tar.gz && \
+    mv salmon-latest_linux_x86_64 /opt/salmon && \
+    rm salmon.tar.gz
 
-# Set the PATH environment variable (to /usr/bin)
+# Set the PATH environment variable to include Salmon
+ENV PATH="/opt/salmon/bin:$PATH"
 

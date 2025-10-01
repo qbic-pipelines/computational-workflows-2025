@@ -2,11 +2,11 @@
 FROM debian:bullseye-slim
 
 # these are the labels that are added to the image. They are metadata that can be used to identify the author of the image.
-LABEL image.author.name "yourname"
-LABEL image.author.email "yourmail"
+LABEL image.author.name "Mykyta Borodin"
+LABEL image.author.email "mykyta.borodin@student.uni-tuebingen.de"
 
-# !TODO: add the command that is run to install the dependencies for the image. In this case, it should be updating the package list and installing curl and cowsay.
+# Update package list and install dependencies
+RUN apt-get update && apt-get install -y curl cowsay && rm -rf /var/lib/apt/lists/*
 
-
-
-# !TODO: add an ENV line to set environmental variables. In this case, it should set the PATH variable to /usr/games. Explain in the notebook why this is necessary.
+# Set PATH to include /usr/games where cowsay is installed
+ENV PATH="/usr/games:$PATH"
