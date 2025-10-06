@@ -1,0 +1,21 @@
+[1] "Reading inputs..."
+[1] "Creating output paths..."
+[1] "Writing boxplots..."
+[1] "... static"
+null device 
+          1 
+[1] "Writing density plots..."
+[1] "... static"
+null device 
+          1 
+[1] "Writing PCA plots..."
+[1] "...static (2d)"
+[1] "...static (3d)"
+NULL
+[1] "Writing sample dendrogram..."
+null device 
+          1 
+[1] "MAD correlation plots..."
+[1] "... static"
+null device 
+          1 

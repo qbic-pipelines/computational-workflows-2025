@@ -1,0 +1,6 @@
+[1] "Constructing ExploratorySummarizedExperiments"
+[1] "Reading salmon.merged.gene_counts.assay.tsv"
+[1] "Reading all.normalised_counts.tsv"
+[1] "Reading all.vst.tsv"
+[1] "Creating ExploratorySummarizedExperimentList"
+[1] "Creating ExploratorySummarizedExperimentList object"

@@ -1,0 +1,14 @@
+DESEQ2_DIFFERENTIAL:
+  r-base: 4.1.3
+  bioconductor-deseq2: 1.34.0
+PLOT_DIFFERENTIAL:
+  r-base: 4.3.3
+  r-shinyngs: 1.8.8
+PLOT_EXPLORATORY:
+  r-shinyngs: 1.8.8
+VALIDATOR:
+  r-base: 4.3.3
+  r-shinyngs: 1.8.8
+Workflow:
+    nf-core/differentialabundance: v1.5.0-g3dd360f
+    Nextflow: 25.04.7

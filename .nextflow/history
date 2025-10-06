@@ -1,0 +1,1 @@
+2025-09-30 11:20:43	-	gloomy_mclean	-	8ec2d934f9301c818d961b1e4fdf7fc79610bdc5	bc788c31-3d31-440d-86ac-93cb04f0ddba	nextflow run nf-core/fetchngs --input ids.csv -profile docker --max_memory 8GB --outdir results

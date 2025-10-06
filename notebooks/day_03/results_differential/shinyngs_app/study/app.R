@@ -1,0 +1,5 @@
+library(shinyngs)
+library(markdown)
+esel <- readRDS("data.rds")
+app <- prepareApp("rnaseq", esel)
+shiny::shinyApp(app$ui, app$server)

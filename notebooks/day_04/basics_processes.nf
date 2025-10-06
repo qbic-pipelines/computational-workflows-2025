@@ -4,9 +4,128 @@ params.zip = 'zip'
 
 process SAYHELLO {
     debug true
+
+    script:
+    """
+    echo "Hello World!"
+    """
 }
 
+process SAYHELLO_PYTHON {
+    debug true
+    
+    script:
+    """
+    python3 -c "print('Hello World!')"
+    """
+}
 
+process SAYHELLO_PARAM {
+    debug true
+    
+    input:
+    val greeting
+    
+    script:
+    """
+    echo "$greeting"
+    """
+}
+
+process SAYHELLO_FILE {
+    publishDir 'results', mode: 'copy'
+    
+    input:
+    val greeting
+    
+    output:
+    path "output.txt"
+    
+    script:
+    """
+    echo "$greeting" > output.txt
+    """
+}
+
+process UPPERCASE {
+    input:
+    val text
+    
+    output:
+    path "uppercase.txt"
+    
+    script:
+    """
+    echo "$text" | tr '[:lower:]' '[:upper:]' > uppercase.txt
+    """
+}
+
+process PRINTUPPER {
+    debug true
+    
+    input:
+    path inputfile
+    
+    script:
+    """
+    cat $inputfile
+    """
+}
+
+process COMPRESS {
+    input:
+    path inputfile
+    val format
+    
+    output:
+    path "compressed.*"
+    
+    script:
+    if (format == "zip")
+        """
+        zip compressed.zip $inputfile
+        """
+    else if (format == "gzip")
+        """
+        gzip -c $inputfile > compressed.gz
+        """
+    else if (format == "bzip2")
+        """
+        bzip2 -c $inputfile > compressed.bz2
+        """
+}
+
+process COMPRESS_ALL {
+    input:
+    path inputfile
+    
+    output:
+    path "compressed.*"
+    
+    script:
+    """
+    zip compressed.zip $inputfile
+    gzip -c $inputfile > compressed.gz
+    bzip2 -c $inputfile > compressed.bz2
+    """
+}
+
+process WRITETOFILE {
+    publishDir 'results', mode: 'copy'
+    
+    input:
+    val records
+    
+    output:
+    path "names.tsv"
+    
+    script:
+    def lines = records.collect { "${it.name}\t${it.title}" }.join('\n')
+    """
+    echo -e "name\\ttitle" > names.tsv
+    echo -e "$lines" >> names.tsv
+    """
+}
 
 workflow {
 
@@ -51,19 +170,25 @@ workflow {
     //          Print out the path to the zipped file in the console
     if (params.step == 7) {
         greeting_ch = Channel.of("Hello world!")
+        uppercase_ch = UPPERCASE(greeting_ch)
+        compressed_ch = COMPRESS(uppercase_ch, params.zip)
+        compressed_ch.view()
     }
 
     // Task 8 - Create a process that zips the file created in the UPPERCASE process in "zip", "gzip" AND "bzip2" format. Print out the paths to the zipped files in the console
 
     if (params.step == 8) {
         greeting_ch = Channel.of("Hello world!")
+        uppercase_ch = UPPERCASE(greeting_ch)
+        compressed_ch = COMPRESS_ALL(uppercase_ch)
+        compressed_ch.view()
     }
 
     // Task 9 - Create a process that reads in a list of names and titles from a channel and writes them to a file.
     //          Store the file in the "results" directory under the name "names.tsv"
 
     if (params.step == 9) {
-        in_ch = channel.of(
+        in_ch = Channel.of(
             ['name': 'Harry', 'title': 'student'],
             ['name': 'Ron', 'title': 'student'],
             ['name': 'Hermione', 'title': 'student'],
@@ -74,8 +199,8 @@ workflow {
         )
 
         in_ch
+            | collect
             | WRITETOFILE
-            // continue here
     }
 
 }

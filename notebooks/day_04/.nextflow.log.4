@@ -1,0 +1,47 @@
+окт.-06 09:43:54.775 [main] DEBUG nextflow.cli.Launcher - $> nextflow run advanced_channel_operations.nf --step 1
+окт.-06 09:43:54.904 [main] DEBUG nextflow.cli.CmdRun - N E X T F L O W  ~  version 25.04.7
+окт.-06 09:43:54.932 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; embedded=false; plugins-dir=/Users/Nikita/.nextflow/plugins; core-plugins: nf-amazon@2.15.0-patch1,nf-azure@1.16.0-patch1,nf-cloudcache@0.4.3,nf-codecommit@0.2.3,nf-console@1.2.1,nf-google@1.21.1,nf-k8s@1.0.0,nf-tower@1.11.4-patch1,nf-wave@1.12.1
+окт.-06 09:43:54.983 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+окт.-06 09:43:54.985 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+окт.-06 09:43:54.990 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.12.0 in 'deployment' mode
+окт.-06 09:43:55.002 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
+окт.-06 09:43:55.052 [main] DEBUG n.secret.LocalSecretsProvider - Secrets store: /Users/Nikita/.nextflow/secrets/store.json
+окт.-06 09:43:55.064 [main] DEBUG nextflow.secret.SecretsLoader - Discovered secrets providers: [nextflow.secret.LocalSecretsProvider@45394b31] - activable => nextflow.secret.LocalSecretsProvider@45394b31
+окт.-06 09:43:55.109 [main] DEBUG nextflow.cli.CmdRun - Applied DSL=2 by global default
+окт.-06 09:43:55.127 [main] DEBUG nextflow.cli.CmdRun - Launching `advanced_channel_operations.nf` [confident_faraday] DSL2 - revision: 92d27bba08
+окт.-06 09:43:55.129 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[]
+окт.-06 09:43:55.129 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins resolved requirement=[]
+окт.-06 09:43:55.187 [main] DEBUG nextflow.Session - Session UUID: e73b46c3-edb1-439f-9de3-2cb46c36e3c4
+окт.-06 09:43:55.188 [main] DEBUG nextflow.Session - Run name: confident_faraday
+окт.-06 09:43:55.188 [main] DEBUG nextflow.Session - Executor pool size: 10
+окт.-06 09:43:55.195 [main] DEBUG nextflow.file.FilePorter - File porter settings maxRetries=3; maxTransfers=50; pollTimeout=null
+окт.-06 09:43:55.203 [main] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'FileTransfer' minSize=10; maxSize=30; workQueue=LinkedBlockingQueue[-1]; allowCoreThreadTimeout=false
+окт.-06 09:43:55.228 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 25.04.7 build 5955
+  Created: 08-09-2025 13:29 UTC (15:29 CEST)
+  System: Mac OS X 15.5
+  Runtime: Groovy 4.0.26 on OpenJDK 64-Bit Server VM 24.0.2+12-54
+  Encoding: UTF-8 (UTF-8)
+  Process: 97413@MacBook-Air-von-Nikita.local [127.0.0.1]
+  CPUs: 10 - Mem: 24 GB (653 MB) - Swap: 4 GB (1.5 GB)
+окт.-06 09:43:55.241 [main] DEBUG nextflow.Session - Work-dir: /Users/Nikita/Desktop/Studium/Master/Comp Workflows/computational-workflows-2025/notebooks/day_04/work [Mac OS X]
+окт.-06 09:43:55.241 [main] DEBUG nextflow.Session - Script base path does not exist or is not a directory: /Users/Nikita/Desktop/Studium/Master/Comp Workflows/computational-workflows-2025/notebooks/day_04/bin
+окт.-06 09:43:55.252 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[]
+окт.-06 09:43:55.261 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
+окт.-06 09:43:55.267 [main] DEBUG nextflow.Session - Observer factory (v2): LinObserverFactory
+окт.-06 09:43:55.295 [main] DEBUG nextflow.cache.CacheFactory - Using Nextflow cache factory: nextflow.cache.DefaultCacheFactory
+окт.-06 09:43:55.306 [main] DEBUG nextflow.util.CustomThreadPool - Creating default thread pool > poolSize: 11; maxThreads: 1000
+окт.-06 09:43:55.358 [main] DEBUG nextflow.Session - Session start
+окт.-06 09:43:55.876 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+окт.-06 09:43:56.010 [main] DEBUG nextflow.Session - Workflow process names [dsl2]: 
+окт.-06 09:43:56.011 [main] DEBUG nextflow.Session - Igniting dataflow network (1)
+окт.-06 09:43:56.017 [main] DEBUG nextflow.script.ScriptRunner - Parsed script files:
+  Script_82b2c7c83fc41387: /Users/Nikita/Desktop/Studium/Master/Comp Workflows/computational-workflows-2025/notebooks/day_04/advanced_channel_operations.nf
+окт.-06 09:43:56.018 [main] DEBUG nextflow.script.ScriptRunner - > Awaiting termination 
+окт.-06 09:43:56.018 [main] DEBUG nextflow.Session - Session await
+окт.-06 09:43:56.018 [main] DEBUG nextflow.Session - Session await > all processes finished
+окт.-06 09:43:56.018 [main] DEBUG nextflow.Session - Session await > all barriers passed
+окт.-06 09:43:56.043 [main] DEBUG n.trace.WorkflowStatsObserver - Workflow completed > WorkflowStats[succeededCount=0; failedCount=0; ignoredCount=0; cachedCount=0; pendingCount=0; submittedCount=0; runningCount=0; retriesCount=0; abortedCount=0; succeedDuration=0ms; failedDuration=0ms; cachedDuration=0ms;loadCpus=0; loadMemory=0; peakRunning=0; peakCpus=0; peakMemory=0; ]
+окт.-06 09:43:56.179 [main] DEBUG nextflow.cache.CacheDB - Closing CacheDB done
+окт.-06 09:43:56.211 [main] DEBUG nextflow.util.ThreadPoolManager - Thread pool 'FileTransfer' shutdown completed (hard=false)
+окт.-06 09:43:56.211 [main] DEBUG nextflow.script.ScriptRunner - > Execution complete -- Goodbye

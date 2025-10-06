@@ -1,0 +1,2 @@
+task_id	hash	native_id	name	status	exit	submit	duration	realtime	%cpu	peak_rss	peak_vmem	rchar	wchar
+1	d1/6941f2	38240	NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:VALIDATOR (samplesheet.csv)	FAILED	1	2025-10-01 10:22:30.072	21.5s	21.4s	-	-	-	-	-

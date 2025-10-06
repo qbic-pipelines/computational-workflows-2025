@@ -1,0 +1,15 @@
+
+7-Zip [64] 16.02 : Copyright (c) 1999-2016 Igor Pavlov : 2016-05-21
+p7zip Version 16.02 (locale=C.UTF-8,Utf16=on,HugeFiles=on,64 bits,10 CPUs x64)
+
+Scanning the drive:
+15 files, 21286907 bytes (21 MiB)
+
+Creating archive: study.zip
+
+Items to compress: 15
+
+
+Files read from disk: 15
+Archive size: 5859272 bytes (5722 KiB)
+Everything is Ok

@@ -7,6 +7,8 @@ workflow{
 
     if (params.step == 1) {
         in_ch = channel.of(1,2,3)
+        out_ch = in_ch.first()
+        out_ch.view()
 
     }
 
@@ -15,6 +17,8 @@ workflow{
     if (params.step == 2) {
 
         in_ch = channel.of(1,2,3)
+        out_ch = in_ch.last()
+        out_ch.view()
 
     }
 
@@ -24,6 +28,10 @@ workflow{
 
         in_ch = channel.of(1,2,3)
 
+        out_ch = in_ch.take(2)
+        out_ch.view()
+
+
 
     }
 
@@ -32,7 +40,8 @@ workflow{
     if (params.step == 4) {
 
         in_ch = channel.of(2,3,4)
-
+        out_ch = in_ch.map{i -> i * i}
+        out_ch.view()
 
     }
 
@@ -41,7 +50,9 @@ workflow{
     if (params.step == 5) {
 
         in_ch = channel.of(2,3,4)
-        in_ch.map { it -> it * it }.take(2).view()
+        out_ch = in_ch.map {i -> i *i}
+        out_ch = out_ch.take(2)
+        out_ch.view()
         
     }
 
@@ -50,7 +61,9 @@ workflow{
     if (params.step == 6) {
         
         in_ch = channel.of('Taylor', 'Swift')
-
+        out_ch = in_ch.map { it.reverse()}
+        out_ch.view()
+        
     }
 
     // Task 7 - Use fromPath to include all fastq files in the "files_dir" directory, then use map to return a pair containing the file name and the file path (Hint: include groovy code)
@@ -58,6 +71,9 @@ workflow{
     if (params.step == 7) {
 
         in_ch = channel.fromPath('files_dir/*.fq')
+        out_ch = in_ch.map { i -> [i.getName(), i]}
+        out_ch.view()
+
 
         
     }
@@ -69,7 +85,9 @@ workflow{
         ch_1 = channel.of(1,2,3)
         ch_2 = channel.of(4,5,6)
         out_ch = channel.of("a", "b", "c")
-
+        ch_1and2 = ch_1.concat(ch_2)
+        out_ch = out_ch.concat(ch_1and2)
+        out_ch.view()
 
     }
 
@@ -78,6 +96,9 @@ workflow{
     if (params.step == 9) {
 
         in_ch = channel.of([1,2,3], [4,5,6])
+        out_ch = in_ch.flatten()
+        out_ch.view()
+
 
 
     }
@@ -87,6 +108,9 @@ workflow{
     if (params.step == 10) {
 
         in_ch = channel.of(1,2,3)
+        out_ch = in_ch.collect()
+        out_ch.view()
+        // The output channel is a list channel
 
     }
     
@@ -100,6 +124,8 @@ workflow{
     if (params.step == 11) {
 
         in_ch = channel.of([1, 'V'], [3, 'M'], [2, 'O'], [1, 'f'], [3, 'G'], [1, 'B'], [2, 'L'], [2, 'E'], [3, '33'])
+        out_ch = in_ch.groupTuple()
+        out_ch.view()
 
     }
 
@@ -109,6 +135,9 @@ workflow{
 
         left_ch = channel.of([1, 'V'], [3, 'M'], [2, 'O'], [1, 'B'], [3, '33'])
         right_ch = channel.of([1, 'f'], [3, 'G'], [2, 'L'], [2, 'E'],)
+        out_ch = left_ch.join(right_ch)
+        out_ch.view()
+
 
     }
 
@@ -118,6 +147,14 @@ workflow{
     if (params.step == 13) {
 
         in_ch = channel.of(1,2,3,4,5,6,7,8,9,10)
+        
+        (even_ch, odd_ch) = in_ch.branch {
+            even: it % 2 == 0
+            odd: it % 2 == 1
+        }
+            
+        even_ch.collect().view { "Even numbers: $it" }
+        odd_ch.collect().view { "Odd numbers: $it" }
 
     }
 
@@ -135,6 +172,9 @@ workflow{
             ['name': 'Hagrid', 'title': 'groundkeeper'],
             ['name': 'Dobby', 'title': 'hero'],
         )
+        
+        names_ch = in_ch.map { it.name }
+        names_ch.collectFile(name: 'results/names.txt', newLine: true)
     
     }
 

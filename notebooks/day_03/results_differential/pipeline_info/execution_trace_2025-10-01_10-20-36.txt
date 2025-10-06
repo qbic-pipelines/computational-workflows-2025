@@ -1,0 +1,2 @@
+task_id	hash	native_id	name	status	exit	submit	duration	realtime	%cpu	peak_rss	peak_vmem	rchar	wchar
+1	15/a9132a	38128	NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:VALIDATOR (salmon.merged.gene_counts.tsv)	FAILED	1	2025-10-01 10:20:39.288	20.4s	20.4s	-	-	-	-	-

@@ -1,0 +1,5 @@
+[1] "Reading sample sheet at samplesheet.csv with ID col sample"
+[1] "Reading feature metadata at matrix_as_anno.tsv with ID col gene_id"
+[1] "Reading assay matrix salmon.merged.gene_counts.tsv and validating against samples and features (if supplied)"
+[1] "...  salmon.merged.gene_counts.tsv matrix good"
+[1] "Reading contrast definitions and validating against sample sheet"

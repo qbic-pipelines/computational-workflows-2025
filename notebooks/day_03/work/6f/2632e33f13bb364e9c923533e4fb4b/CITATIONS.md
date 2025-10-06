@@ -1,0 +1,1 @@
+/Users/Nikita/.nextflow/assets/nf-core/differentialabundance/CITATIONS.md
