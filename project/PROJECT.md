@@ -1,10 +1,10 @@
 # Fill out your Project Information
 
-Student1: \<name-1>
+Student1: \Christina Parpoulas
 
-Student2: \<name-2>
+Student2: \Leonie Wehnert
 
-Project Github url: \<github-url> 
+Project Github url: \ https://github.com/appelow/WorkflowsProject
 
 
 # Next steps

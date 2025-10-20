@@ -1,0 +1,34 @@
+producer_class	xtools.gsea.Gsea
+producer_timestamp	1759667731279
+param	zip_report	false
+param	num	100
+param	scoring_scheme	weighted
+param	norm	meandiv
+param	out	/home/chrissi/BioPrak/computational-workflows-2025/notebooks/day_01/work/97/0170ba2e3c4052d6575b3b04ba9ddf/.
+param	mode	Max_probe
+param	include_only_symbols	true
+param	set_max	500
+param	gmx	treatment_mCherry_hND6_.mh.all.v2022.1.Mm.symbols.mh.all.v2022.1.Mm.symbols.gmt
+param	plot_top_x	20
+param	nperm	1000
+param	order	descending
+param	rnd_seed	timestamp
+param	rpt_label	treatment_mCherry_hND6_.mh.all.v2022.1.Mm.symbols
+param	set_min	15
+param	res	/home/chrissi/BioPrak/computational-workflows-2025/notebooks/day_01/work/97/0170ba2e3c4052d6575b3b04ba9ddf/treatment_mCherry_hND6_.mh.all.v2022.1.Mm.symbols.treatment_mCherry_hND6_.gct
+param	chip	treatment_mCherry_hND6_.mh.all.v2022.1.Mm.symbols.Mus_musculus.anno.feature_metadata.chip
+param	create_svgs	false
+param	cls	treatment_mCherry_hND6_.mh.all.v2022.1.Mm.symbols.treatment_mCherry_hND6_.cls#hND6_versus_mCherry
+param	sort	real
+param	create_gcts	false
+param	help	false
+param	save_rnd_lists	false
+param	median	false
+param	metric	Signal2Noise
+param	make_sets	true
+param	rnd_type	no_balance
+param	gui	false
+param	permute	phenotype
+param	collapse	Collapse
+
+file	./treatment_mCherry_hND6_.mh.all.v2022.1.Mm.symbols.Gsea/treatment_mCherry_hND6_.mh.all.v2022.1.Mm.symbols.index.html
